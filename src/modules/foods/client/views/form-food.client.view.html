@@ -41,6 +41,20 @@
                     </div>
                 </div>
                 <div class="form-group" show-errors>
+                    <label class="control-label" for="desc">介绍</label>
+                    <textarea name="desc" type="text" ng-model="vm.food.desc" id="desc" class="form-control" placeholder="介绍" required></textarea>
+                    <div ng-messages="vm.form.foodForm.desc.$error" role="alert">
+                        <p class="help-block error-text" ng-message="required">请输入介绍</p>
+                    </div>
+                </div>
+                <div class="form-group" show-errors>
+                    <label class="control-label" for="shortDesc">简介</label>
+                    <textarea name="shortDesc" type="text" ng-model="vm.food.shortDesc" id="shortDesc" class="form-control" placeholder="简介" required></textarea>
+                    <div ng-messages="vm.form.foodForm.shortDesc.$error" role="alert">
+                        <p class="help-block error-text" ng-message="required">请输入简介</p>
+                    </div>
+                </div>
+                <div class="form-group" show-errors>
                     <label class="control-label" for="image">图片</label>
                     <input foods-uploader file="vm.food.image" name="image" type="file" ng-model="vm.food.image" id="image" class="form-control" placeholder="价格">
                 </div>

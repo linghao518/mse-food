@@ -1,0 +1,64 @@
+.foods-list {
+    .food-item {
+        float: left;
+        position: relative;
+        color: #fff;
+        width: 350px;
+        margin: 0 15px 30px 15px;
+
+        img {
+            width: 100%;
+        }
+
+        .tip-box {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.3);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            h4 {
+                text-align: center;
+                font-size: 2em;
+                margin: 30px 15px 0 15px;
+
+                &:after {
+                    content: '';
+                    background: #fff;
+                    height: 3px;
+                    width: 100%;
+                    display: block;
+                }
+            }
+
+            p {
+                margin: 0;
+                padding: 0;
+            }
+
+            .description {
+                position: absolute;
+                bottom: 20px;
+                right: 20px;
+                left: 20px;
+                text-align: right;
+
+                .price {
+                    font-size: 2em;
+                }
+            }
+        }
+    }
+}
+
+.open-food {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+
+    .food-detail {
+        width: 30%;
+        min-width: 300px;
+    }
+}

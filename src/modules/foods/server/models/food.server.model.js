@@ -36,6 +36,14 @@ var FoodSchema = new Schema({
     type: String,
     default: ''
   },
+  desc: {
+    type: String,
+    default: ''
+  },
+  shortDesc: {
+    type: String,
+    default: ''
+  },
   imageURL: {
     type: String,
     default: ''

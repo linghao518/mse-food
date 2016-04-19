@@ -32,8 +32,8 @@ exports.create = function(req, res) {
     im.crop({
         srcPath: config.uploads.foodUpload.dest + req.file.filename,
         dstPath: food.thumbnailURL,
-        width: 300,
-        height: 300
+        width: 350,
+        height: 350
     });
 
     

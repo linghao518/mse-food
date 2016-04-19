@@ -1,22 +1,25 @@
 <section>
-  <div class="page-header">
-    <h1>Foods</h1>
-  </div>
-  <div class="list-group">
-    <a data-ng-repeat="food in vm.foods"
-       data-ui-sref="foods.view({ foodId: food._id })"
-       class="list-group-item">
-      <small class="list-group-item-text">
-        Posted on
-        <span data-ng-bind="food.created | date:'mediumDate'"></span>
-        by
-        <span data-ng-if="food.user" data-ng-bind="food.user.displayName"></span>
-        <span data-ng-if="!food.user">Deleted User</span>
-      </small>
-      <h4 class="list-group-item-heading" data-ng-bind="food.name"></h4>
-    </a>
-  </div>
-  <div class="alert alert-warning text-center" data-ng-if="vm.foods.$resolved && !vm.foods.length">
-    No Foods yet, why don't you <a data-ui-sref="foods.create">create one</a>?
-  </div>
+    <div class="foods-list">
+        <div data-ng-repeat="food in vm.foods" ng-click="vm.open(food._id)" class="food-item">
+            <img ng-src="{{food.thumbnailURL}}" />
+            <div class="tip-box">
+                <h4>{{food.name}}</h4>
+                <div class="description">
+                    <p class="price">¥ {{food.price}}</p>
+                    <p>{{food.shortDesc}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="open-food">
+        <div class="food-detail">
+            {{vm.openedFood.category}}
+            {{vm.openedFood.material}}
+            {{vm.openedFood.desc}}
+        </div>
+        <div class="food-image">
+            <img ng-src="{{vm.openedFood.imageURL}}" />
+        </div>
+    </div>
 </section>

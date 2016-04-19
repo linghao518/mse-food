@@ -1,4 +1,4 @@
-<section>
+<section ng-class="{opened: vm.opened}">
     <div class="foods-list">
         <div data-ng-repeat="food in vm.foods" ng-click="vm.open(food._id)" class="food-item">
             <img ng-src="{{food.thumbnailURL}}" />
@@ -14,14 +14,17 @@
 
     <div class="open-food" ng-if="vm.openedFood">
         <div class="food-detail">
+            <div class="close-food" ng-click="vm.close()"><i class="fa fa-times"></i></div>
+            <div class="user">
+                <img src="{{vm.openedFood.user.profileImageURL}}" />
+                <div>{{vm.openedFood.user.displayName}}</div>
+            </div>
             <h4>{{vm.openedFood.name}}</h4>
             <p><label>菜系: </label>{{vm.openedFood.category}}</p>
             <p><label>食材: </label>{{vm.openedFood.material}}</p>
             <p><label>保存方式: </label>{{vm.openedFood.temperature}}</p>
             <p>{{vm.openedFood.desc}}</p>
         </div>
-        <div class="food-image" style="background-image: url({{vm.openedFood.imageURL}});">
-            
-        </div>
+        <div class="food-image" style="background-image: url({{vm.openedFood.imageURL}});"> </div>
     </div>
 </section>

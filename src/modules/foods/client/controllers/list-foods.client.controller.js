@@ -12,12 +12,17 @@
 
         vm.foods = FoodsService.query();
         vm.openedFood = null;
+        vm.opened = false;
         vm.open = open;
+        vm.close = close;
 
         function open(_id) {
-            console.log(11);
+            vm.opened = true;
             vm.openedFood = _.findWhere(vm.foods, {_id: _id});
-            console.log(vm.openedFood);
+        };
+
+        function close() {
+            vm.opened = false;
         };
     }
 })();

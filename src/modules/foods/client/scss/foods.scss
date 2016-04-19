@@ -165,6 +165,24 @@
             }
         }
 
+        .price {
+            margin-bottom: 20px;
+            font-size: 30px;
+            color: #ff9900;
+            button {
+                -webkit-transition: all 0.35s;
+                transition: all 0.35s;
+                margin-left: 10px;
+                background: #ff9900;
+                box-shadow: none;
+
+                &:hover {
+                    background: #ffba00;
+                    border: 1px solid #ffa800;
+                }
+            }
+        }
+
         h4 {
             margin-bottom: 20px;
         }

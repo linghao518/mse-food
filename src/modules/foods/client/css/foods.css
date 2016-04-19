@@ -137,6 +137,19 @@
         height: 40px;
         border-radius: 200%;
         margin-bottom: 10px; }
+    .open-food .food-detail .price {
+      margin-bottom: 20px;
+      font-size: 30px;
+      color: #ff9900; }
+      .open-food .food-detail .price button {
+        -webkit-transition: all 0.35s;
+        transition: all 0.35s;
+        margin-left: 10px;
+        background: #ff9900;
+        box-shadow: none; }
+        .open-food .food-detail .price button:hover {
+          background: #ffba00;
+          border: 1px solid #ffa800; }
     .open-food .food-detail h4 {
       margin-bottom: 20px; }
     .open-food .food-detail p label {

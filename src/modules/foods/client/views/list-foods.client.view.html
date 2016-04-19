@@ -12,14 +12,16 @@
         </div>
     </div>
 
-    <div class="open-food">
+    <div class="open-food" ng-if="vm.openedFood">
         <div class="food-detail">
-            {{vm.openedFood.category}}
-            {{vm.openedFood.material}}
-            {{vm.openedFood.desc}}
+            <h4>{{vm.openedFood.name}}</h4>
+            <p><label>菜系: </label>{{vm.openedFood.category}}</p>
+            <p><label>食材: </label>{{vm.openedFood.material}}</p>
+            <p><label>保存方式: </label>{{vm.openedFood.temperature}}</p>
+            <p>{{vm.openedFood.desc}}</p>
         </div>
-        <div class="food-image">
-            <img ng-src="{{vm.openedFood.imageURL}}" />
+        <div class="food-image" style="background-image: url({{vm.openedFood.imageURL}});">
+            
         </div>
     </div>
 </section>

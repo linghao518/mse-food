@@ -56,9 +56,23 @@
     position: fixed;
     height: 100%;
     width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 2000;
 
     .food-detail {
-        width: 30%;
-        min-width: 300px;
+        width: 300px;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: #fff;
+    }
+
+    .food-image {
+        margin-right: 300px;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
     }
 }

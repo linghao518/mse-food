@@ -1,0 +1,33 @@
+<section>
+    <div class="page-header">
+        <h1>订单</h1>
+    </div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>菜品名</th>
+                <th>客人姓名</th>
+                <th>下单时间</th>
+                <th>送单地址</th>
+                <th>联系电话</th>
+                <th>订单状态</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="order in vm.orders">
+                <td>{{order.food.name}}</td>
+                <td>{{order.user.displayName}}</td>
+                <td>{{order.created | date:'yyyy-MM-dd HH:mm'}}</td>
+                <td>{{order.address}}</td>
+                <td>{{order.tel}}</td>
+                <td>
+                    <select ng-model="order.status" class="form-control" ng-options="status.value as status.value for status in vm.statusList"></select>
+                </td>
+                <td>
+                    <button class="btn btn-default btn-xs"><i class="fa fa-eye"></i> 删除</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>

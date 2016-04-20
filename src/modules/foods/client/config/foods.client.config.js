@@ -13,7 +13,7 @@
       title: 'Foods',
       state: 'foods',
       type: 'dropdown',
-      roles: ['*']
+      roles: ['admin']
     });
 
     // Add the dropdown list item

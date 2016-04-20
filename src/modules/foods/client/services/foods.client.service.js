@@ -25,7 +25,6 @@
 
     function formDataObject(data) {
         var fd = new FormData();
-        console.log(data);
         angular.forEach(data, function(value, key) {
             fd.append(key, value);
         });

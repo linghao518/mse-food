@@ -10,16 +10,34 @@ var mongoose = require('mongoose'),
  * Order Schema
  */
 var OrderSchema = new Schema({
-  name: {
-    type: String,
-    default: '',
-    required: 'Please fill Order name',
-    trim: true
-  },
   created: {
     type: Date,
     default: Date.now
   },
+  address: {
+    type: String,
+    default: ''
+  },
+  quantity: {
+    type: Number,
+    default: 1
+  },
+  tel: {
+    type: String,
+    default: ''
+  },
+  note: {
+    type: String,
+    default: ''
+  },
+  status: {
+    type: String,
+    default: '订单处理中'
+  },
+  food: {
+    type: Schema.ObjectId,
+    ref: 'Food'
+  }, 
   user: {
     type: Schema.ObjectId,
     ref: 'User'

@@ -19,7 +19,8 @@
                 <td>{{food.created | date:'yyyy-MM-dd HH:mm'}}</td>
                 <td>{{food.user.displayName}}</td>
                 <td>
-                    <button class="btn btn-default btn-xs"><i class="fa fa-eye"></i> 删除</button>
+                    <a data-ui-sref="foodsAdmin.edit({ foodId: food._id })" class="btn btn-default btn-xs"><i class="fa fa-cog"></i> 编辑</a>
+                    <button ng-click="vm.deleteFood(food)" class="btn btn-default btn-xs"><i class="fa fa-times"></i> 删除</button>
                 </td>
             </tr>
         </tbody>

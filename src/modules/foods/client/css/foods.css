@@ -157,6 +157,8 @@
         .open-food .food-detail .price button:hover {
           background: #ffba00;
           border: 1px solid #ffa800; }
+      .open-food .food-detail .price a {
+        font-size: 16px; }
     .open-food .food-detail h4 {
       margin-bottom: 20px; }
     .open-food .food-detail p label {

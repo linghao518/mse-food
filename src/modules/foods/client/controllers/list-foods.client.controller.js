@@ -5,11 +5,12 @@
         .module('foods')
         .controller('FoodsListController', FoodsListController);
 
-    FoodsListController.$inject = ['FoodsService', 'OrdersService'];
+    FoodsListController.$inject = ['FoodsService', 'Authentication', 'OrdersService'];
 
-    function FoodsListController(FoodsService, OrdersService) {
+    function FoodsListController(FoodsService, Authentication, OrdersService) {
         var vm = this;
-
+        
+        vm.authentication = Authentication;
         vm.foods = FoodsService.query();
         vm.openedFood = null;
         vm.opened = false;

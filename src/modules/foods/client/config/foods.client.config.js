@@ -10,23 +10,9 @@
   function menuConfig(menuService) {
     // Set top bar menu items
     menuService.addMenuItem('topbar', {
-      title: 'Foods',
-      state: 'foods',
-      type: 'dropdown',
+      title: '菜单管理',
+      state: 'foodsAdmin.list',
       roles: ['admin']
-    });
-
-    // Add the dropdown list item
-    menuService.addSubMenuItem('topbar', 'foods', {
-      title: 'List Foods',
-      state: 'foods.list'
-    });
-
-    // Add the dropdown create item
-    menuService.addSubMenuItem('topbar', 'foods', {
-      title: 'Create Food',
-      state: 'foods.create',
-      roles: ['user']
     });
   }
 })();

@@ -11,11 +11,11 @@
         $stateProvider
             .state('foods', {
                 abstract: true,
-                url: '/',
+                url: '',
                 template: '<ui-view/>'
             })
             .state('foods.list', {
-                url: '',
+                url: '/',
                 templateUrl: 'modules/foods/client/views/list-foods.client.view.html',
                 controller: 'FoodsListController',
                 controllerAs: 'vm',
@@ -34,19 +34,6 @@
                 data: {
                     roles: ['user', 'admin'],
                     pageTitle: 'Foods Create'
-                }
-            })
-            .state('foods.edit', {
-                url: '/:foodId/edit',
-                templateUrl: 'modules/foods/client/views/form-food.client.view.html',
-                controller: 'FoodsController',
-                controllerAs: 'vm',
-                resolve: {
-                    foodResolve: getFood
-                },
-                data: {
-                    roles: ['user', 'admin'],
-                    pageTitle: 'Edit Food {{ foodResolve.name }}'
                 }
             })
             .state('foods.view', {
@@ -72,10 +59,23 @@
             .state('foodsAdmin.list', {
                 url: '',
                 templateUrl: 'modules/foods/client/views/list-foods-admin.client.view.html',
-                controller: 'FoodsListController',
+                controller: 'FoodsListAdminController',
                 controllerAs: 'vm',
                 data: {
                     pageTitle: 'Foods List'
+                }
+            })
+            .state('foodsAdmin.edit', {
+                url: '/:foodId/edit',
+                templateUrl: 'modules/foods/client/views/form-food.client.view.html',
+                controller: 'FoodsController',
+                controllerAs: 'vm',
+                resolve: {
+                    foodResolve: getFood
+                },
+                data: {
+                    roles: ['user', 'admin'],
+                    pageTitle: 'Edit Food {{ foodResolve.name }}'
                 }
             });
     }

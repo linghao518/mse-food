@@ -22,10 +22,10 @@
                 <td>{{order.address}}</td>
                 <td>{{order.tel}}</td>
                 <td>
-                    <select ng-model="order.status" class="form-control" ng-options="status.value as status.value for status in vm.statusList"></select>
+                    <select ng-model="order.status" ng-change="vm.updateOrder(order)" class="form-control" ng-options="status.value as status.value for status in vm.statusList"></select>
                 </td>
                 <td>
-                    <button class="btn btn-default btn-xs"><i class="fa fa-eye"></i> 删除</button>
+                    <button ng-click="vm.deleteOrder(order)" class="btn btn-default btn-xs"><i class="fa fa-times"></i> 删除</button>
                 </td>
             </tr>
         </tbody>

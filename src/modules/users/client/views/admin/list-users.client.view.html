@@ -1,21 +1,30 @@
 <section>
-  <div class="page-header">
-    <div class="row">
-      <div class="col-md-4">
-        <h1>Users</h1>
-      </div>
-      <div class="col-md-4" style="margin-top: 2em">
-        <input class="form-control col-md-4" type="text" ng-model="vm.search" placeholder="Search" ng-change="vm.figureOutItemsToDisplay()" />
-      </div>
+    <div class="page-header">
+        <h1>用户</h1>
     </div>
-  </div>
-  <div class="list-group">
-    <a ng-repeat="user in vm.pagedItems" ui-sref="admin.user({userId: user._id})" class="list-group-item">
-      <h4 class="list-group-item-heading" ng-bind="user.username"></h4>
-      <p class="list-group-item-text pull-right small" ng-bind="user.roles"></p>
-      <p class="list-group-item-text" ng-bind="user.email"></p>
-    </a>
-  </div>
-
-  <uib-pagination boundary-links="true" max-size="8" items-per-page="vm.itemsPerPage" total-items="vm.filterLength" ng-model="vm.currentPage" ng-change="vm.pageChanged()"></uib-pagination>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>用户名</th>
+                <th>昵称</th>
+                <th>邮箱</th>
+                <th>创建时间</th>
+                <th>角色</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="user in vm.users">
+                <td>{{user.username}}</td>
+                <td>{{user.displayName}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.created | date:'yyyy-MM-dd HH:mm'}}</td>
+                <td ng-bind="user.roles"></td>
+                <td>
+                    <a class="btn btn-default btn-xs" ui-sref="admin.user-edit({userId: user._id})"><i class="fa fa-cog"></i> 编辑</a>
+                    <button ng-click="user.deleteUser(user)" class="btn btn-default btn-xs"><i class="fa fa-times"></i> 删除</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>

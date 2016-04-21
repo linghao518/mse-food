@@ -25,7 +25,7 @@
         controller: 'UserController',
         controllerAs: 'vm',
         resolve: {
-          userResolve: getUser
+          User: getUser
         },
         data: {
           pageTitle: 'Edit {{ userResolve.displayName }}'

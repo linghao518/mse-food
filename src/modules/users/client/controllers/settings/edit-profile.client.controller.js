@@ -5,12 +5,12 @@
     .module('users')
     .controller('EditProfileController', EditProfileController);
 
-  EditProfileController.$inject = ['$scope', '$http', '$location', 'Users', 'Authentication'];
+  EditProfileController.$inject = ['$scope', '$http', '$location', 'Authentication', 'UsersMeService'];
 
-  function EditProfileController($scope, $http, $location, Users, Authentication) {
+  function EditProfileController($scope, $http, $location, Authentication, UsersMeService) {
     var vm = this;
 
-    vm.user = Authentication.user;
+    vm.user = UsersMeService.get();
     vm.updateUserProfile = updateUserProfile;
 
     // Update a user profile
@@ -23,7 +23,7 @@
         return false;
       }
 
-      var user = new Users(vm.user);
+      var user = vm.user;
 
       user.$update(function (response) {
         $scope.$broadcast('show-errors-reset', 'vm.userForm');

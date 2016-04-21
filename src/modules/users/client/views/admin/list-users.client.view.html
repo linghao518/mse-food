@@ -22,7 +22,7 @@
                 <td ng-bind="user.roles"></td>
                 <td>
                     <a class="btn btn-default btn-xs" ui-sref="admin.user-edit({userId: user._id})"><i class="fa fa-cog"></i> 编辑</a>
-                    <button ng-click="user.deleteUser(user)" class="btn btn-default btn-xs"><i class="fa fa-times"></i> 删除</button>
+                    <button ng-click="vm.deleteUser(user)" class="btn btn-default btn-xs"><i class="fa fa-times"></i> 删除</button>
                 </td>
             </tr>
         </tbody>

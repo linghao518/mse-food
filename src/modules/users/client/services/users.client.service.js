@@ -1,35 +1,50 @@
-(function () {
-  'use strict';
+(function() {
+    'use strict';
 
-  // Users service used for communicating with the users REST endpoint
-  angular
-    .module('users.services')
-    .factory('UsersService', UsersService);
+    // Users service used for communicating with the users REST endpoint
+    angular
+        .module('users.services')
+        .factory('UsersService', UsersService);
 
-  UsersService.$inject = ['$resource'];
+    UsersService.$inject = ['$resource'];
 
-  function UsersService($resource) {
-    return $resource('api/users', {}, {
-      update: {
-        method: 'PUT'
-      }
-    });
-  }
+    function UsersService($resource) {
+        return $resource('api/users', {}, {
+            update: {
+                method: 'PUT'
+            }
+        });
+    }
 
-  // TODO this should be Users service
-  angular
-    .module('users.admin.services')
-    .factory('AdminService', AdminService);
 
-  AdminService.$inject = ['$resource'];
+    angular
+        .module('users.me.services')
+        .factory('UsersMeService', UsersMeService);
 
-  function AdminService($resource) {
-    return $resource('api/users/:userId', {
-      userId: '@_id'
-    }, {
-      update: {
-        method: 'PUT'
-      }
-    });
-  }
+    UsersMeService.$inject = ['$resource'];
+
+    function UsersMeService($resource) {
+        return $resource('api/users/me', {}, {
+            update: {
+                method: 'PUT'
+            }
+        });
+    }
+
+    // TODO this should be Users service
+    angular
+        .module('users.admin.services')
+        .factory('AdminService', AdminService);
+
+    AdminService.$inject = ['$resource'];
+
+    function AdminService($resource) {
+        return $resource('api/users/:userId', {
+            userId: '@_id'
+        }, {
+            update: {
+                method: 'PUT'
+            }
+        });
+    }
 }());

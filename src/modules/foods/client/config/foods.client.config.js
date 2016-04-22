@@ -10,7 +10,7 @@
   function menuConfig(menuService) {
     // Set top bar menu items
     menuService.addMenuItem('topbar', {
-      title: '菜单管理',
+      title: '菜肴管理',
       state: 'foodsAdmin.list',
       roles: ['admin']
     });

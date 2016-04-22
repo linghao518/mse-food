@@ -3,7 +3,10 @@
 
   angular
     .module('core.routes')
-    .config(routeConfig);
+    .config(routeConfig)
+    .run(function() {
+      console.log("辛苦戴老师批阅！朱凌浩-16222010647")
+    });
 
   routeConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 

@@ -20,6 +20,6 @@ dump目录下为数据库备份
 
 3) 导入数据库：进入项目根目录，运行命令：`$ mongorestore -d mse-food  ./dump/mse-food`
 
-3）运行gulp:  `$ gulp`
+3）运行node server: `$ node server.js` 或运行gulp:  `$ gulp`
 
 4）在浏览器中打开 http://localhost:5000

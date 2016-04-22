@@ -6,9 +6,9 @@
     .module('foods')
     .controller('FoodsController', FoodsController);
 
-  FoodsController.$inject = ['$scope', '$state', 'Authentication', 'foodResolve'];
+  FoodsController.$inject = ['$scope', '$state', '$timeout', 'Authentication', 'foodResolve'];
 
-  function FoodsController ($scope, $state, Authentication, food) {
+  function FoodsController ($scope, $state, $timeout, Authentication, food) {
     var vm = this;
 
     vm.authentication = Authentication;
@@ -40,9 +40,11 @@
       }
 
       function successCallback(res) {
-        $state.go('foods.view', {
-          foodId: res._id
-        });
+        $timeout(function() {
+          $state.go('foods.list', {
+            foodId: res._id
+          });
+        }, 1000);
       }
 
       function errorCallback(res) {
